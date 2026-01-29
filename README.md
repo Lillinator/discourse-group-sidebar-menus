@@ -2,7 +2,7 @@
 
 ## 👩‍💻 Overview
 
-This Discourse theme component allows admins to create custom sidebar menus that are only accessible to members of selected groups.
+This Discourse theme component gives forum administrators the ability to create custom sidebar menus that are only accessible to members of selected groups.
 
 **Key Features:**
 
