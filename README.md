@@ -5,15 +5,13 @@
 This Discourse theme component gives forum administrators the ability to create custom sidebar menus that are only accessible to members of selected groups.
 
 **Key Features:**
+**Group-based access control** - Menu sections only render for authorized users
+**Object-based configuration** - All settings for creating group menu sections are in component admin UI
+**Multiple sections** - Create unlimited menu sections for different groups (within reason)
+**Client-side security** - Unauthorized users cannot see menu sections in DOM, web inspector, or safe mode
+**Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
 
-- **Group-based access control** - Menu sections only render for authorized users
-- **Object-based configuration** - All settings for creating group menu sections are in component admin UI
-- **Multiple sections** - Create unlimited menu sections for different groups (within reason)
-- **Client-side security** - Unauthorized users cannot see menu sections in DOM, web inspector, or safe mode
-- **No global pollution** - Doesn't require creating global sidebar sections
-- **Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
-
-## 💼 Use Cases
+## 💼 Some Use Cases
 
 - Staff-only resources and quick links
 - Category moderator shortcuts
@@ -60,8 +58,7 @@ Links:
 
 ### Admin Access
 
-* **Admins must add themselves to groups** to see menus configured for those groups. Admin status alone does not grant access to all custom menus. This is intentional!
-* Admins who belong to a menu’s allowed groups will see a pencil icon in the section header that links to component settings.
+Admins must add themselves to groups to see menus configured for those groups. Admin status alone does not grant access to all custom menus. This is intentional! Also, admins who belong to a menu’s allowed groups will see a pencil icon in the section header that links to component settings.
 
 ### Group Configuration
 
@@ -70,13 +67,11 @@ Links:
 * Users in multiple groups will see all menu sections they have access to.
 
 ### Testing & Organization
-
-* **Use test accounts** to verify correct access for different group combinations.
-* **Keep track of your menu configurations** to avoid confusion as complexity grows; an access matrix or similar documentation is recommended for larger forums with many groups.
+Use test accounts to verify correct access for different group combinations and keep track of your menu configurations to avoid confusion as complexity grows; an access matrix or similar documentation is recommended for larger forums with many groups.
 
 ### Security Considerations
 
-This component provides **UI-level access control only**. It controls menu access, not resource access.
+This component provides UI-level access control only. It controls menu access, not resource access.
 
 **What this component protects:**
 
@@ -85,9 +80,7 @@ This component provides **UI-level access control only**. It controls menu acces
 * :white_check_mark: Clean UX without menu clutter
 
 **Administrators best practice:**
-
-* Configure linked category security permissions and group memembership separately - for example: a menu link to a private category must have that category’s permissions properly configured.
-* Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
+Configure linked category security permissions and group memembership separately - for example: a menu link to a private category must have that category’s permissions properly configured. Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
 
 ---
 
