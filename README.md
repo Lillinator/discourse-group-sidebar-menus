@@ -73,7 +73,7 @@ Links:
 ### Testing & Organization
 
 * **Use test accounts** to verify correct access for different group combinations.
-* Keep track of your menu configurations to avoid confusion as complexity grows; access matrix or similar documentation is recommended for large organizations with many groups.
+* **Keep track of your menu configurations** to avoid confusion as complexity grows; an access matrix or similar documentation is recommended for larger forums with many groups.
 
 ### Security Considerations
 
