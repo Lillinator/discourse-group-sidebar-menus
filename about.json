@@ -1,7 +1,7 @@
 {
-  "name": "Group Sidebar Menus",
+  "name": "Discourse Group Sidebar Menus",
   "component": true,
-  "authors": "Lilly",
+  "authors": "Lilly, Moin",
   "about_url": "https://github.com/Lillinator/pink-axolotl/blob/dev/README.md",
   "license_url": "https://github.com/Lillinator/pink-axolotl/blob/dev/LICENSE",
   "theme_version": "1.0.0"
