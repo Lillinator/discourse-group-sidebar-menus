@@ -5,11 +5,11 @@
 This Discourse theme component gives forum administrators the ability to create custom sidebar menus that are only accessible to members of selected groups.
 
 **Key Features:**
-**Group-based access control** - Menu sections only render for authorized users
-**Object-based configuration** - All settings for creating group menu sections are in component admin UI
-**Multiple sections** - Create unlimited menu sections for different groups (within reason)
-**Client-side security** - Unauthorized users cannot see menu sections in DOM, web inspector, or safe mode
-**Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
+* **Group-based access control** - Menu sections only render for authorized users
+* **Object-based configuration** - All settings for creating group menu sections are in component admin UI
+* **Multiple sections** - Create unlimited menu sections for different groups (within reason)
+* **Client-side security** - Unauthorized users cannot see menu sections in DOM, web inspector, or safe mode
+* **Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
 
 ## 💼 Some Use Cases
 
