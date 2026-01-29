@@ -1,0 +1,29 @@
+en:
+  theme_metadata:
+    description: "Custom sidebar menu for specified groups"
+    settings:
+      menu_sections: 
+        description: "The custom menu sections to create for selected groups"
+        schema:
+          properties:
+            title: 
+              label: "Menu title"
+              description: "Title of the menu as it should appear in the sidebar"
+            groups:
+              label: "Allowed groups"
+              description: "Groups that are allowed to see the custom menu section"
+            links:
+              label: "Menu links"
+              description: "Links in the group menu"
+              schema:
+                properties:
+                  icon:
+                    label: "Icon"
+                    description: "FontAwesome icon to use for the link"
+                  text:
+                    label: "Link text"
+                    description: "Display text for the link"
+                  url:
+                    label: "URL"
+                    description: "The address of the link, relative or absolute"
+  edit_component: "Edit this menu section"

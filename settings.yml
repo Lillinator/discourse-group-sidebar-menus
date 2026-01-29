@@ -1,0 +1,44 @@
+menu_sections:
+  type: objects
+  default: []
+  schema:
+    name: new_menu_section
+    identifier: title
+    properties:
+      title:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+      groups:
+        type: groups
+        required: true
+        validations:
+          max: 20
+      links:
+        type: objects
+        schema:
+          name: menu_link
+          identifier: text
+          properties:
+            icon:
+              type: string
+              required: true
+              validations:
+                min_length: 1
+                max_length: 50
+            text:
+              type: string
+              required: true
+              validations:
+                min_length: 1
+                max_length: 100
+            url:
+              type: string
+              required: true
+              validations:
+                min_length: 1
+                max_length: 500
+        validations:
+          max: 20  # Limit links per section
