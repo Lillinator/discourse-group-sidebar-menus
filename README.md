@@ -85,13 +85,10 @@ This component provides **UI-level access control only**. It controls menu acces
 * :white_check_mark: Links not discoverable via inspector/console/safe-mode
 * :white_check_mark: Clean UX without menu clutter
 
-**What administrators must still secure:**
+**Administrators best practice:**
 
 * Configure linked category security permissions and group memembership separately - for example: a menu link to a private category must have that category’s permissions properly configured.
 * Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
-
-**Best practice:** Use this component to organize navigation to resources that already have proper Discourse and organizational permissions in place.
-
 
 ---
 
