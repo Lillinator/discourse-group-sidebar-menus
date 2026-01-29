@@ -16,7 +16,6 @@ This Discourse theme component gives forum administrators the ability to create 
 ## 💼 Use Cases
 
 - Staff-only resources and quick links
-- Trust-level-specific navigation (guides for new users, advanced tools for veterans)
 - Category moderator shortcuts
 - Custom group portals (project teams, study groups, book clubs, VIP members)
 - Links to parent or partner website resources
