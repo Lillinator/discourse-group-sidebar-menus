@@ -1,5 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import { i18n } from "discourse-i18n";
+import getURL from "discourse/lib/get-url";
 import CustomMenuLink from "../lib/custom-menu-link";
 
 /**
@@ -12,18 +13,18 @@ export default apiInitializer((api) => {
     return;
   }
 
-  // Auto-detect theme component ID from themePrefix
-  const extractThemeId = () => {
-    const prefix = themePrefix();
-    const match = prefix.match(/theme_translations\.(\d+)\./);
-    return match ? match[1] : null;
-  };
-
-  const themeId = extractThemeId();
-
   // Get IDs of all groups the current user belongs to
   const userGroupIds = currentUser.groups.map((g) => g.id);
   const menuSections = settings.menu_sections || [];
+
+  // Auto-detect theme component ID and build edit URL for admins
+  let themeURL = null;
+  if (currentUser.admin) {
+    const match = themePrefix("id").match(/theme_translations\.(\d+)\.id/);
+    if (match) {
+      themeURL = getURL(`/admin/customize/themes/${match[1]}`);
+    }
+  }
 
   // Process each configured menu section
   for (const section of menuSections) {
@@ -61,14 +62,14 @@ export default apiInitializer((api) => {
         name = sectionName;
         text = sectionTitle;
 
-        // Show pencil icon in header for admins when theme ID is detected
+        // Show pencil icon in header for admins when theme URL is available
         get actionsIcon() {
-          return currentUser.admin && themeId ? "pencil" : null;
+          return themeURL ? "pencil" : null;
         }
 
         // Admin action to navigate to theme component settings
         get actions() {
-          if (!currentUser.admin || !themeId) {
+          if (!themeURL) {
             return [];
           }
 
@@ -76,7 +77,7 @@ export default apiInitializer((api) => {
             {
               id: "editSection",
               title: i18n(themePrefix("edit_component")),
-              action: () => window.location.href = `/admin/customize/themes/${themeId}`,
+              action: () => window.location.href = themeURL,
             },
           ];
         }
