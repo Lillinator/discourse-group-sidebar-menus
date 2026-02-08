@@ -74,9 +74,9 @@ Links:
 
 This component provides UI-level access control only. It controls menu access, not resource access.
 
-:white_check_mark: Clean, organized navigation experience
-:white_check_mark: Reduced UI clutter for unauthorized users
-:white_check_mark: Professional group-specific portals
+- :white_check_mark: Clean, organized navigation experience
+- :white_check_mark: Reduced UI clutter for unauthorized users
+- :white_check_mark: Professional group-specific portals
 
 This is not a security feature. Does not prevent access to link sources - this component only controls what appears in the sidebar, not who can access the actual resources.
 
