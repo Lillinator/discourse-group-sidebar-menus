@@ -88,7 +88,7 @@ Always rely on Discourse’s built-in permission system to secure actual resourc
 - Ensure private resources require authentication
 
 **Administrators best practice:**
-Configure linked category security permissions and group memembership separately - for example: a menu link to a private category must have that category’s permissions properly configured. Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
+Configure linked category security permissions and group membership separately - for example: a menu link to a private category must have that category’s permissions properly configured. Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
 
 ---
 
