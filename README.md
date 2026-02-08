@@ -2,21 +2,22 @@
 
 ## 👩‍💻 Overview
 
-This Discourse theme component gives forum administrators the ability to create custom sidebar menus that are only accessible to members of selected groups.
+This Discourse theme component allows admins to create custom sidebar menus that are only visible to members of selected groups.
 
 **Key Features:**
-* **Group-based access control** - Menu sections only render for authorized users
-* **Object-based configuration** - All settings for creating group menu sections are in component admin UI
-* **Multiple sections** - Create unlimited menu sections for different groups (within reason)
-* **Client-side security** - Unauthorized users cannot see menu sections in DOM, web inspector, or safe mode
-* **Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
 
-## 💼 Some Use Cases
+- **Group-based menu visibility** - Menu sections only appear in sidebar for authorized users
+- **Object-based configuration** - Easy-to-use settings UI for creating menus
+- **Multiple sections** - Create unlimited menu sections for different groups (within reason)
+- **Admin quick-edit link** - Pencil icon in menu headers links admins directly to component settings
+
+## 💼 Use Cases
 
 - Staff-only resources and quick links
 - Category moderator shortcuts
 - Custom group portals (project teams, study groups, book clubs, VIP members)
 - Links to parent or partner website resources
+- Organizing navigation for different user groups
 
 ## ⚙️ Settings
 
@@ -57,27 +58,34 @@ Links:
 ## 💡 Important Notes
 
 ### Admin Access
-
-Admins must add themselves to groups to see menus configured for those groups. Admin status alone does not grant access to all custom menus. This is intentional! Also, admins who belong to a menu’s allowed groups will see a pencil icon in the section header that links to component settings.
+- Admins must add themselves to groups to see menus configured for those groups. Admin status alone does not grant access to all custom menus. This is intentional!
+- Admins who belong to a menu’s allowed groups will see a pencil icon in the section header that links to component settings.
 
 ### Group Configuration
-
-* **`everyone` group is not supported** - Use the native sidebar footer UI to create global custom menus for all users, including anonymous visitors.
-* Maximum of 20 groups per menu section. If you need more, create duplicate sections with different group assignments.
-* Users in multiple groups will see all menu sections they have access to.
+- everyone group is not supported - Use the native sidebar footer UI to create global custom menus for all users, including anonymous visitors.
+- Maximum of 20 groups per menu section. If you need more, create duplicate sections with different group assignments.
+- Users in multiple groups will see all menu sections they have access to.
 
 ### Testing & Organization
-Use test accounts to verify correct access for different group combinations and keep track of your menu configurations to avoid confusion as complexity grows; an access matrix or similar documentation is recommended for larger forums with many groups.
+- Use test accounts to verify menu visibility for different group combinations.
+- Keep track of your menu configurations to avoid confusion as complexity grows.
 
-### Security Considerations
+### Security & Privacy Considerations
 
 This component provides UI-level access control only. It controls menu access, not resource access.
 
-**What this component protects:**
+:white_check_mark: Clean, organized navigation experience
+:white_check_mark: Reduced UI clutter for unauthorized users
+:white_check_mark: Professional group-specific portals
 
-* :white_check_mark: Menu sections hidden from unauthorized users
-* :white_check_mark: Links not discoverable via inspector/console/safe-mode
-* :white_check_mark: Clean UX without menu clutter
+This is not a security feature. Does not prevent access to link sources - this component only controls what appears in the sidebar, not who can access the actual resources.
+
+Always rely on Discourse’s built-in permission system to secure actual resources:
+
+- Configure category permissions properly
+- Set topic visibility restrictions
+- Use group-based access controls for content
+- Ensure private resources require authentication
 
 **Administrators best practice:**
 Configure linked category security permissions and group memembership separately - for example: a menu link to a private category must have that category’s permissions properly configured. Administrators are responsible for ensuring links to outside resources are appropriately authorized for selected groups.
