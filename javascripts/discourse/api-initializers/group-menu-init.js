@@ -14,6 +14,8 @@ export default apiInitializer((api) => {
   }
 
   // Get IDs of all groups the current user belongs to
+  // DEPRECATED: Once section.user_in_groups is fully
+  // available in core, remove this.
   const userGroupIds = currentUser.groups.map((g) => g.id);
   const menuSections = settings.menu_sections || [];
 
@@ -28,23 +30,31 @@ export default apiInitializer((api) => {
 
   // Process each configured menu section
   for (const section of menuSections) {
-    const allowedGroupIds = section.groups || [];
-    
-    // Skip sections with no group configuration
-    if (!allowedGroupIds.length) {
-      continue;
-    }
+    if (Object.hasOwn(section, "user_in_groups")) {
+      if (!section.user_in_groups) {
+        continue;
+      }
+    } else {
+      // DEPRECATED: Once section.user_in_groups is fully
+      // available in core, remove this.
+      const allowedGroupIds = section.groups || [];
 
-    // Check if user belongs to any of the allowed groups
-    const hasAccess = allowedGroupIds.some((id) => userGroupIds.includes(id));
+      // Skip sections with no group configuration
+      if (!allowedGroupIds.length) {
+        continue;
+      }
 
-    if (!hasAccess) {
-      continue;
+      // Check if user belongs to any of the allowed groups
+      const hasAccess = allowedGroupIds.some((id) => userGroupIds.includes(id));
+
+      if (!hasAccess) {
+        continue;
+      }
     }
 
     // Create link instances from section configuration
     const menuLinks = (section.links || []).map(
-      (link) => new CustomMenuLink(link)
+      (link) => new CustomMenuLink(link),
     );
 
     // Skip sections with no links configured
@@ -77,7 +87,7 @@ export default apiInitializer((api) => {
             {
               id: "editSection",
               title: i18n(themePrefix("edit_component")),
-              action: () => window.location.href = themeURL,
+              action: () => (window.location.href = themeURL),
             },
           ];
         }
