@@ -1,4 +1,4 @@
-# Discourse Group Sidebar Menus
+# Group Sidebar Menus
 
 ## 👩‍💻 Overview
 
