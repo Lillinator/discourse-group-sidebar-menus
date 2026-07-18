@@ -13,10 +13,6 @@ export default apiInitializer((api) => {
     return;
   }
 
-  // Get IDs of all groups the current user belongs to
-  // DEPRECATED: Once section.user_in_groups is fully
-  // available in core, remove this.
-  const userGroupIds = currentUser.groups.map((g) => g.id);
   const menuSections = settings.menu_sections || [];
 
   // Auto-detect theme component ID and build edit URL for admins
@@ -35,9 +31,6 @@ export default apiInitializer((api) => {
         continue;
       }
     } else {
-      // DEPRECATED: Once section.user_in_groups is fully
-      // available in core, remove this.
-      const allowedGroupIds = section.groups || [];
 
       // Skip sections with no group configuration
       if (!allowedGroupIds.length) {
