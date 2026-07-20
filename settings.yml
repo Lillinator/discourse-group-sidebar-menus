@@ -15,6 +15,7 @@ menu_sections:
         type: groups
         required: true
         resolve_group_membership: true
+        disallowed_groups: "0|4"
         validations:
           max: 20
       links:
