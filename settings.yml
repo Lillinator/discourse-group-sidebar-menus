@@ -13,6 +13,7 @@ menu_sections:
           max_length: 100
       groups:
         type: groups
+        disallowed_groups: "0|4"
         required: true
         resolve_group_membership: true
         validations:
