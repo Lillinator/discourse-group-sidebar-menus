@@ -26,6 +26,7 @@ menu_sections:
           properties:
             icon:
               type: icon
+              default: ""
               required: true
             text:
               type: string
