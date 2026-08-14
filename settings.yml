@@ -25,11 +25,11 @@ menu_sections:
           identifier: text
           properties:
             icon:
-              type: string
+              type: icon
               required: true
               validations:
                 min_length: 1
-                max_length: 50
+                max_length: 20
             text:
               type: string
               required: true
